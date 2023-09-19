@@ -1,16 +1,19 @@
 import React from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import { fetchData } from "../services";
 function Login(props) {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [loginFlag, setLoginFlag] = useState(true);
 
-  // const handleSignupClick = () => {
-  //   navigate("/signup");
-  // };
+  const navToWall = (login) => {
+    if (login) {
+      fetchData("users.json").then((res) => console.log(res));
+    }
+    navigate("/wall");
+  };
 
-  const handleSignUpClick = () => {
+  const navSignUpLoginClick = () => {
     setLoginFlag(!loginFlag);
   };
 
@@ -38,13 +41,21 @@ function Login(props) {
             )}
 
             <div className="padding-top-bottom">
-              {loginFlag && <button className="button">Login</button>}
-              {!loginFlag && <button className="button">Sign Up</button>}
+              {loginFlag && (
+                <button className="button" onClick={() => navToWall(true)}>
+                  Login
+                </button>
+              )}
+              {!loginFlag && (
+                <button className="button" onClick={() => navToWall(false)}>
+                  Sign Up
+                </button>
+              )}
             </div>
 
             {loginFlag && (
               <div className="padding-top-bottom">
-                <button className="button" onClick={handleSignUpClick}>
+                <button className="button" onClick={navSignUpLoginClick}>
                   Create New Account
                 </button>
               </div>
@@ -54,7 +65,7 @@ function Login(props) {
               <div className="padding-top-bottom">
                 <p>
                   Already have an account?{" "}
-                  <a href="#" onClick={handleSignUpClick}>
+                  <a href="#" onClick={navSignUpLoginClick}>
                     Login
                   </a>
                 </p>

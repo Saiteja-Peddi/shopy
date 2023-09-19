@@ -1,12 +1,8 @@
-import logo from "./logo.svg";
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
-// import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import { Login } from "./pages/login";
-// import { Signup } from "./pages/signup";
 
-import { Login, Signup } from "./pages";
+import { Login, Wall } from "./pages";
 
 function App() {
   return (
@@ -16,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Outlet />}>
             <Route index element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path="/wall" element={<Wall />} />
           </Route>
         </Routes>
       </div>
