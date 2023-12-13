@@ -1,2 +1,2 @@
-export { default as Login } from "./login.js";
-export { default as Wall } from "./wall.js";
+export { default as Wall } from "./Wall/Wall.js";
+export { default as Authentication } from "./authentication/Authentication.js";

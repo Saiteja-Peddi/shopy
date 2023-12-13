@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 
-import { Login, Wall } from "./pages";
+import { Wall, Authentication } from "./pages";
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Outlet />}>
-            <Route index element={<Login />} />
+            <Route index element={<Authentication />} />
             <Route path="/wall" element={<Wall />} />
           </Route>
         </Routes>
