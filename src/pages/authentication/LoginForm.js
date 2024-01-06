@@ -4,12 +4,16 @@ import { InputField } from "../../components/form";
 import { useNavigate } from "react-router-dom";
 import { fetchData } from "../../services";
 function LoginForm(props) {
+  // Navigate is used to navigate between pages.
   const navigate = useNavigate();
+
+  // userForm is hook from react-hook-form
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm({ criteriaMode: "all", mode: "all" });
+
   const onSubmit = (data) => {
     console.log(data);
     fetchData("users.json").then((res) => console.log(res));
@@ -19,8 +23,8 @@ function LoginForm(props) {
   return (
     <div className="container login-container">
       <div className="row">
-        <div className="col-md-3.5"></div>
-        <div className="col-md-5 login-form">
+        <div className="col-md-4"></div>
+        <div className="col-md-4 login-form">
           <form onSubmit={handleSubmit(onSubmit)}>
             <InputField
               label="Username"
@@ -43,19 +47,19 @@ function LoginForm(props) {
               errors={errors}
             />
 
-            <div className="padding-top-bottom">
+            <div class="form-button-div">
               <button className="button" type="submit">
                 Login
               </button>
             </div>
           </form>
-          <div className="padding-top-bottom">
+          <div className="form-button-div">
             <button className="button" onClick={props.onNavSignUp}>
               Create New Account
             </button>
           </div>
         </div>
-        <div className="col-md-3.5"></div>
+        <div className="col-md-4"></div>
       </div>
     </div>
   );

@@ -43,26 +43,18 @@
   width: fit-content;
   margin: auto;
   border-style: outset;
-  min-height: 350px;
+  min-height: 400px;
   background-color: #282c34;
   color: white;
   border-radius: 14px;
-  text-align: center;
 }
 
 .login-form form {
   padding-top: 10%;
 }
-.padding-top-bottom {
-  padding: 1em 0;
-}
 
 .login-container .row {
-  margin-top: 15%;
-}
-
-.padding-1em {
-  padding: 0 1em;
+  margin-top: 10%;
 }
 
 .button {
@@ -76,4 +68,20 @@
 .error {
   color: red;
   margin: 0;
+}
+
+.form-label {
+  display: block;
+}
+.form-input {
+  width: 100%;
+}
+
+.form-button-div {
+  padding: 1em 0;
+  text-align: center;
+}
+
+.form-group {
+  padding: 0.5em 2.5em;
 }

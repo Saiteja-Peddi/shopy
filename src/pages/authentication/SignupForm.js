@@ -16,8 +16,8 @@ function SignupForm(props) {
   return (
     <div className="container login-container">
       <div className="row">
-        <div className="col-md-3.5"></div>
-        <div className="col-md-5 login-form">
+        <div className="col-md-4"></div>
+        <div className="col-md-4 login-form">
           <form onSubmit={handleSubmit(onSubmit)}>
             <InputField
               label="Username"
@@ -52,13 +52,13 @@ function SignupForm(props) {
               errors={errors}
             />
 
-            <div className="padding-top-bottom">
+            <div class="form-button-div">
               <button className="button" type="submit">
                 SignUp
               </button>
             </div>
           </form>
-          <div className="padding-top-bottom">
+          <div class="form-button-div">
             <p>
               Already have an account?{" "}
               <a href="#" onClick={props.onNavSignUp}>
@@ -67,7 +67,7 @@ function SignupForm(props) {
             </p>
           </div>
         </div>
-        <div className="col-md-3.5"></div>
+        <div className="col-md-4"></div>
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ import { Wall, Authentication } from "./pages";
 function App() {
   return (
     <BrowserRouter>
-      <div className="row App-header">Shoppy</div>
+      <div className="row App-header">Shopy</div>
       <div>
         <Routes>
           <Route path="/" element={<Outlet />}>
